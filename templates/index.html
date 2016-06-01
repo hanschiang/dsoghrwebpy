@@ -1,0 +1,31 @@
+$def with (todos)
+<div>
+
+  <form method="post" action="add">
+  <input type="submit" name="title" value="江承翰" /> &nbsp;
+  <input type="submit" name="title" value="江啓源" /> &nbsp;
+  <input type="submit" name="title" value="廖佩婷" /> &nbsp;
+
+  </form>
+
+  <table class="table" width="250">
+
+    <thead>
+      <tr>
+        <th> 姓名 </th>
+        <th> 打卡時間 </th>
+      </tr>
+    </thead>  
+
+    <tbody>
+      $for todo in todos:
+      <tr>
+        <th id="t$todo.id"> $todo.title </th>
+        <th id="t$todo.id"> $todo.created </th>
+      </tr>
+    </tbody>
+
+     
+
+  </table>
+</div>
