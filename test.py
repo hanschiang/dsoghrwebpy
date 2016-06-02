@@ -15,13 +15,15 @@ db = web.database(dbn='sqlite', db='testdb')
 
 class index:
     def GET(self):
-        todos = db.select('todo')
-        return render.index(todos)
+        todos = db.select('todo2', order="created DESC")
+        stafflists = db.select('stafflist')
+        tant = [todos, stafflists]
+        return render.index(tant)
 
 class add:
     def POST(self):
         i = web.input()
-        n = db.insert('todo', title = i.title)
+        n = db.insert('todo2', title = i.title)
         raise web.seeother('/')
 
 if __name__ == "__main__":

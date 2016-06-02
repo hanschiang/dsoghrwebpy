@@ -1,12 +1,9 @@
-$def with (todos)
+$def with (tant)
 <div>
-
-  <form method="post" action="add">
-  <input type="submit" name="title" value="Hnt" /> &nbsp;
-  <input type="submit" name="title" value="Ks" /> &nbsp;
-  <input type="submit" name="title" value="Pt" /> &nbsp;
-
-  </form>
+    <form method="post" action="add">
+      $for stafflist in tant[1]:
+      <input type="submit" name="title" value="$stafflist.staffname" /> &nbsp;
+    </form>
 
   <table class="table" width="250">
 
@@ -18,10 +15,10 @@ $def with (todos)
     </thead>  
 
     <tbody>
-      $for todo in todos:
+      $for todo2 in tant[0]:
       <tr>
-        <th id="t$todo.id"> $todo.title </th>
-        <th id="t$todo.id"> $todo.created </th>
+        <th id="t$todo2.id"> $todo2.title </th>
+        <th id="t$todo2.id"> $todo2.created </th>
       </tr>
     </tbody>
 
