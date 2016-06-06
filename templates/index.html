@@ -3,11 +3,14 @@ $def with (hr_items)
 
 <h2>功能表</h2>
 
+<a href="/staff_list/">新增員工</a>
+
 <h2>員工清單</h2>
 
     <form method="post" action="add">
       $for stafflist in hr_items[1]:
-      <input type="submit" name="punch" value="$stafflist.staff_name" /> &nbsp;
+      $stafflist.staff_number
+      <input type="submit" name="punch" value="$stafflist.staff_name" /> <br>
     </form>
 
 

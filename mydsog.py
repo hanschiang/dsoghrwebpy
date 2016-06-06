@@ -23,7 +23,7 @@ staff_register_form = form.Form(
 class index:
     def GET(self):
         punch_ins = db.select('punch_in', order="created DESC")
-        stafflists = db.select('stafflist')
+        stafflists = db.select('stafflist', order="staff_number ASC")
         hr_items = [punch_ins, stafflists]
         return render.index(hr_items)
 
