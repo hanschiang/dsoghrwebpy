@@ -1,28 +1,37 @@
-$def with (tant)
+$def with (hr_items)
 <div>
+
+<h2>功能表</h2>
+
+<h2>員工清單</h2>
+
     <form method="post" action="add">
-      $for stafflist in tant[1]:
-      <input type="submit" name="title" value="$stafflist.staffname" /> &nbsp;
+      $for stafflist in hr_items[1]:
+      <input type="submit" name="punch" value="$stafflist.staff_name" /> &nbsp;
     </form>
 
-  <table class="table" width="250">
+
+<h2>所有打卡清單</h2>
+
+  <table class="table" width="400">
 
     <thead>
       <tr>
         <th> 姓名 </th>
         <th> 打卡時間 </th>
       </tr>
-    </thead>  
+    </thead>
 
     <tbody>
-      $for todo2 in tant[0]:
+      $for punch_in in hr_items[0]:
       <tr>
-        <th id="t$todo2.id"> $todo2.title </th>
-        <th id="t$todo2.id"> $todo2.created </th>
+        <th id="t$punch_in.id"> $punch_in.punch </th>
+        <th id="t$punch_in.id"> $punch_in.created </th>
       </tr>
     </tbody>
 
-     
+
 
   </table>
+
 </div>

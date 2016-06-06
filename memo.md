@@ -28,13 +28,11 @@ create table todo2 (
 insert into todo (title) values ('Learn web.py');
 
 
-
 # Check Column Names of a Table
 
 .header on
 .mode colum
 pragma table_info(table_name);
-
 
 
 # empty database
@@ -45,3 +43,24 @@ DELETE FROM table_name;
 # drop table
 
 DROP TABLE database_name.table_name;
+
+
+# table: punch_in
+
+create table punch_in (
+    id integer primary key,
+    punch text,
+    created datetime default (strftime('%Y/%m/%d %H:%M:%S', 'now', 'localtime')),
+    done boolean default 'f'
+);
+
+
+# table: stafflist
+
+create table stafflist (
+    id integer primary key,
+    staff_number integer,
+    staff_name text,
+    registered datetime default (strftime('%Y/%m/%d %H:%M:%S', 'now', 'localtime')),
+    done boolean default 'f'
+);
