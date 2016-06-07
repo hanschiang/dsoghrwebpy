@@ -64,3 +64,10 @@ create table stafflist (
     registered datetime default (strftime('%Y/%m/%d %H:%M:%S', 'now', 'localtime')),
     done boolean default 'f'
 );
+
+
+
+# apache2?
+
+https://www.hyperink.com/blog/?p=13
+
