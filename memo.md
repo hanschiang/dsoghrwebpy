@@ -66,6 +66,10 @@ create table stafflist (
 );
 
 
+# cmd line database handling
+
+sqlite3 database_name "delete from table_name"
+
 
 # apache2?
 
